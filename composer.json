@@ -1,0 +1,24 @@
+{
+    "name": "whitedev/filament-permissions",
+    "description": "Filament + Spatie dynamic permissions package for CRUD",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "WhiteDev\\FilamentPermissions\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0",
+        "filament/filament": "^3.0",
+        "spatie/laravel-permission": "^6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WhiteDev\\FilamentPermissions\\FilamentPermissionsServiceProvider"
+            ]
+        }
+    }
+}
