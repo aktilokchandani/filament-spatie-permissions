@@ -2,39 +2,47 @@
 
 namespace WhiteDev\FilamentPermissions\Resources;
 
-use WhiteDev\FilamentPermissions\Models\Permission;
-use Filament\Resources\Resource;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Filament\Tables;
-use WhiteDev\FilamentPermissions\Resources\Pages\Permissions\ListPermissions;
+use Filament\Resources\Resource;
+use Filament\Tables\Columns\TextColumn;
+
+use WhiteDev\FilamentPermissions\Models\Permission;
+use WhiteDev\FilamentPermissions\Resources\PermissionResource\Pages;
 
 class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
-    protected static ?string $navigationIcon = 'heroicon-s-key';
+
+    protected static ?string $navigationIcon = 'heroicon-s-cog';
     protected static ?string $navigationGroup = 'App Settings';
 
     public static function form(Form $form): Form
     {
-        return $form->schema([
-            // You can add form fields here if needed
-        ]);
+        return $form->schema([]);
     }
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
-            Tables\Columns\TextColumn::make('id')->sortable(),
-            Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('guard_name')->sortable(),
-        ]);
+        return $table
+            ->columns([
+                TextColumn::make('id')->sortable(),
+                TextColumn::make('name')->sortable(),
+                TextColumn::make('guard_name')->sortable(),
+            ])
+            ->filters([])
+            ->actions([]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => ListPermissions::route('/'),
+            'index' => Pages\ListPermissions::route('/'),
         ];
     }
 }
