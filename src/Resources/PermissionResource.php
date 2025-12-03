@@ -4,8 +4,8 @@ namespace WhiteDev\FilamentPermissions\Resources;
 
 use WhiteDev\FilamentPermissions\Models\Permission;
 use Filament\Resources\Resource;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
 use Filament\Tables;
 use WhiteDev\FilamentPermissions\Resources\Pages\Permissions\ListPermissions;
 
@@ -17,7 +17,9 @@ class PermissionResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form->schema([]);
+        return $form->schema([
+            // You can add form fields here if needed
+        ]);
     }
 
     public static function table(Table $table): Table

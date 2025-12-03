@@ -4,10 +4,10 @@ namespace WhiteDev\FilamentPermissions\Resources;
 
 use WhiteDev\FilamentPermissions\Models\Role;
 use Filament\Resources\Resource;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
 use Filament\Forms;
+use Filament\Forms\Form;
 use Filament\Tables;
+use Filament\Tables\Table;
 use WhiteDev\FilamentPermissions\Resources\Pages\Roles\ListRoles;
 use WhiteDev\FilamentPermissions\Resources\Pages\Roles\CreateRole;
 use WhiteDev\FilamentPermissions\Resources\Pages\Roles\EditRole;
@@ -21,13 +21,15 @@ class RoleResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\TextInput::make('name')->required()->maxLength(255),
+            Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
             Forms\Components\Select::make('guard_name')
                 ->options(array_combine(array_keys(config('auth.guards')), array_keys(config('auth.guards'))))
                 ->default(config('auth.defaults.guard'))
                 ->required(),
             Forms\Components\MultiSelect::make('permissions')
-                ->relationship('permissions', 'name')
+                ->relationship('permissions', 'name'),
         ]);
     }
 
