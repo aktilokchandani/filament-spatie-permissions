@@ -3,29 +3,32 @@
 namespace WhiteDev\FilamentPermissions;
 
 use Illuminate\Support\ServiceProvider;
-use WhiteDev\FilamentPermissions\Commands\GeneratePermissions;
 use Filament\Facades\Filament;
-use WhiteDev\FilamentPermissions\Filament\FilamentPermissionsPlugin;
+use WhiteDev\FilamentPermissions\Resources\RoleResource;
+use WhiteDev\FilamentPermissions\Resources\PermissionResource;
 
 class FilamentPermissionsServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        // publish config
+        // Publish config
         $this->publishes([
             __DIR__.'/../config/filament-permissions.php' => config_path('filament-permissions.php'),
         ], 'config');
 
-        // register commands
+        // Register commands
         if ($this->app->runningInConsole()) {
-            $this->commands([GeneratePermissions::class]);
+            $this->commands([
+                Commands\GeneratePermissions::class,
+            ]);
         }
 
-        // Auto-attach plugin to all panels
+        // ⭐ IMPORTANT: Filament v3 resource registration
         Filament::serving(function () {
-            if (Filament::getCurrentPanel()) {
-                Filament::getCurrentPanel()->plugin(new FilamentPermissionsPlugin());
-            }
+            Filament::registerResources([
+                RoleResource::class,
+                PermissionResource::class,
+            ]);
         });
     }
 
