@@ -20,7 +20,7 @@
         "laravel": {
             "providers": [
                 "WhiteDev\\FilamentPermissions\\FilamentPermissionsServiceProvider",
-                "WhiteDev\\FilamentPermissions\\PanelProvider"
+                "WhiteDev\\FilamentPermissions\\PermissionsPanelProvider"
             ]
         }
     }

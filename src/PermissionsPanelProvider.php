@@ -5,7 +5,7 @@ namespace WhiteDev\FilamentPermissions;
 use Filament\Panel;
 use Filament\PanelProvider;
 
-class PanelProvider extends PanelProvider
+class PermissionsPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
