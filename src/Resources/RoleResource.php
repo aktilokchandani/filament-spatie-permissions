@@ -8,9 +8,9 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
-use WhiteDev\FilamentPermissions\Resources\Pages\Roles\ListRoles;
-use WhiteDev\FilamentPermissions\Resources\Pages\Roles\CreateRole;
-use WhiteDev\FilamentPermissions\Resources\Pages\Roles\EditRole;
+use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\ListRoles;
+use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\CreateRole;
+use WhiteDev\FilamentPermissions\Resources\\RoleResource\Pages\EditRole;
 
 class RoleResource extends Resource
 {
