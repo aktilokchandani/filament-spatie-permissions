@@ -12,6 +12,7 @@ use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\ListRoles;
 use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\CreateRole;
 use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\EditRole;
 
+
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
