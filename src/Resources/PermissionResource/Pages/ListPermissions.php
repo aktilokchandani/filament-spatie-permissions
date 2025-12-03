@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\PermissionResource\Pages;
+namespace WhiteDev\FilamentPermissions\Resources\PermissionResource\Pages;
 
-use App\Filament\Resources\PermissionResource;
 use Filament\Resources\Pages\ListRecords;
+use WhiteDev\FilamentPermissions\Resources\PermissionResource;
 
 class ListPermissions extends ListRecords
 {
