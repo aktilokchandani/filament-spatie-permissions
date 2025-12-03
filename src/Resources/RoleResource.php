@@ -10,7 +10,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\ListRoles;
 use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\CreateRole;
-use WhiteDev\FilamentPermissions\Resources\\RoleResource\Pages\EditRole;
+use WhiteDev\FilamentPermissions\Resources\RoleResource\Pages\EditRole;
 
 class RoleResource extends Resource
 {
