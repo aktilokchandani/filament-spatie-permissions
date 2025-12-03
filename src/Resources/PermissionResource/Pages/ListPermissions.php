@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteDev\FilamentPermissions\Resources;
+namespace WhiteDev\FilamentPermissions\Resources\PermissionResource\Pages;
 
 use WhiteDev\FilamentPermissions\Resources\PermissionResource\Pages;
 use WhiteDev\FilamentPermissions\Models\Permission;
