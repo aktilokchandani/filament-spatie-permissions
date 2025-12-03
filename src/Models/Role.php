@@ -17,7 +17,6 @@ class Role extends SpatieRole
         $this->mergeFillable(['name', 'is_system', 'doptor_id']);
     }
 
-
     protected static function booted()
     {
         static::creating(function ($model) {
