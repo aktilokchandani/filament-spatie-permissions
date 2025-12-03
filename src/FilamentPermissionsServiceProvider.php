@@ -4,6 +4,10 @@ namespace WhiteDev\FilamentPermissions;
 
 use Illuminate\Support\ServiceProvider;
 
+use Filament\Facades\Filament;
+use Filament\Panel;
+
+
 class FilamentPermissionsServiceProvider extends ServiceProvider
 {
     public function register(): void
@@ -12,12 +16,13 @@ class FilamentPermissionsServiceProvider extends ServiceProvider
     }
 
     public function boot(): void
-    {
+    {   
         // Register console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
                  \WhiteDev\FilamentPermissions\Commands\GeneratePermissions::class,
             ]);
         }
+        
     }
 }
