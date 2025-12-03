@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteDev\FilamentPermissions\Filament;
+namespace WhiteDev\FilamentPermissions;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -11,7 +11,12 @@ class FilamentPermissionsPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'whitedev-filament-permissions';
+        return 'filament-permissions';
+    }
+
+    public static function make(): static
+    {
+        return app(static::class);
     }
 
     public function register(Panel $panel): void

@@ -19,7 +19,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WhiteDev\\FilamentPermissions\\FilamentPermissionsServiceProvider"
+                "WhiteDev\\FilamentPermissions\\FilamentPermissionsServiceProvider",
+                "WhiteDev\\FilamentPermissions\\PanelProvider"
             ]
         }
     }

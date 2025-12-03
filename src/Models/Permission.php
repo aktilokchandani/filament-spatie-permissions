@@ -2,12 +2,31 @@
 
 namespace WhiteDev\FilamentPermissions\Models;
 
-use Spatie\Permission\Models\Permission as SpatiePermission;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use \Spatie\Permission\Models\Permission as ParentModel;
 
-class Permission extends SpatiePermission
+class Permission extends ParentModel
 {
-    public static function defaultPermissions(): array
+    use HasFactory;
+
+    public static function defaultPermissions()
     {
-        return ['view', 'create', 'update', 'delete'];
+        return [
+            'view_users',
+            'add_users',
+            'edit_users',
+            'delete_users',
+
+            'view_roles',
+            'add_roles',
+            'edit_roles',
+            'delete_roles',
+
+            'view_posts',
+            'add_posts',
+            'edit_posts',
+            'delete_posts',
+        ];
     }
 }

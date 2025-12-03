@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteDev\FilamentPermissions\Resources\Pages\Roles;
+namespace WhiteDev\FilamentPermissions\Resources\Pages;
 
 use Filament\Resources\Pages\EditRecord;
 use WhiteDev\FilamentPermissions\Resources\RoleResource;
